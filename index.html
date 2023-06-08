@@ -9,9 +9,8 @@
     <link rel="shortcut icon" href="./src/img/favicon2/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="./src/css/style.css">
-
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
     <script src="https://kit.fontawesome.com/67ea4b2edc.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
 </head>
 <body x-data="{ theme: 2, page: 'home' }" x-init="$watch('page', () => { loadPage() })"
     :class="{'bg-background text-contraste-white': theme===1, 'bg-contraste-white text-background': theme===2}" 
@@ -110,7 +109,7 @@
     
     <footer class="py-3 flex flex-col relative bottom-0 w-full"
     :class="{'bg-background border-t-contraste-gray border-t': theme===1, 'bg-contraste-white border-t-contraste-red border-t': theme===2}">
-        <p class="text-center">&copy; COPYRIGHT FATEC JALES 2023. DESENVOLVIDO POR JOÃO PEDRO MERLOTTI. </p>
+        <p class="text-center">&copy; COPYRIGHT FATEC JALES 2023. DESENVOLVIDO POR <span class="cursor-pointer text-contraste-red" @click="page = 'aboutme'">JOÃO PEDRO MERLOTTI</span>. </p>
     </footer>
     <script src="./src/js/index.js"></script>
 </body>
