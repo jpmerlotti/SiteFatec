@@ -1,17 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-Br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FATEC Jales</title>
 
+    <link rel="shortcut icon" href="./src/img/favicon2/favicon.ico" type="image/x-icon">
+
     <link rel="stylesheet" href="./src/css/style.css">
-    <script src="./src/js/main.js"></script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
+    <script src="https://kit.fontawesome.com/67ea4b2edc.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <header class="bg-gray-300">
-        <h1>Bem vindo à FATEC Jales</h1>
+<body x-data="{ theme: 2, page: 'home' }" x-init="$watch('page', () => { loadPage() })"
+    :class="{'bg-background text-contraste-white': theme===1, 'bg-contraste-white text-background': theme===2}" 
+    class="flex flex-col relative" x-watch="theme">
+    <header :class="{'bg-background shadow-md shadow-contraste-gray/50 border-b-contraste-gray border-b': theme===1, 'bg-contraste-white shadow-md shadow-contraste-red/50 border-b-contraste-red border-b': theme===2}"
+    class="py-3 flex flex-col sticky top-0 w-full">
+
+        <div class="flex flex-row justify-around items-center h-20">
+            <img src="./src/img/Branco.png" :class="{'hidden': theme === 2}" alt="Logo Fatec" height="42px" width="148px">
+            <img src="./src/img/Escuro.png" :class="{'hidden': theme === 1}" alt="Logo Fatec" height="42px" width="148px">
+
+            <div class="space-x-2" >
+                <i class="fa-sun cursor-pointer" :class="{'fa-solid': theme===2, 'fa-regular': theme===1}" aria-hidden="true" @Click="theme=2" ></i>
+                <i class="fa-moon cursor-pointer" :class="{'fa-solid': theme===1, 'fa-regular': theme===2}" aria-hidden="true" @click="theme=1"></i>
+            </div>
+        </div>
+
+        <div :class="{'border-b border-b-contraste-gray mt-3 mb-2': theme===1, 'border-b border-b-contraste-red mt-3 mb-2': theme===2}"></div>
+
+        <ul class="flex flex-row justify-around">
+            <li @click="page = 'home'" :class="{'cursor-default text-contraste-gray border-b border-b-contraste-red font-bold': page==='home'}" 
+              class="cursor-pointer text-xl hover:text-contraste-gray hover:border-b hover:border-b-contraste-red hover:font-bold">
+                Home
+            </li>
+            <li @click="page = 'contato'" :class="{'cursor-default text-contraste-gray border-b border-b-contraste-red font-bold': page==='contato'}"
+              class="cursor-pointer text-xl hover:text-contraste-gray hover:border-b hover:border-b-contraste-red hover:font-bold">
+                Contato
+            </li>
+            <li @click="page = 'devops'" :class="{'cursor-default text-contraste-gray border-b border-b-contraste-red font-bold': page==='devops'}" 
+              class="cursor-pointer text-xl hover:text-contraste-gray hover:border-b hover:border-b-contraste-red hover:font-bold">
+                Dev Ops
+            </li>
+            <li @click="page = 'aboutme'" :class="{'cursor-default text-contraste-gray border-b border-b-contraste-red font-bold': page==='aboutme'}"
+              class="cursor-pointer text-xl hover:text-contraste-gray hover:border-b hover:border-b-contraste-red hover:font-bold">
+                About Me
+            </li>
+            <!--<li @click="page = '#'" :class="{'cursor-default text-contraste-gray border-b border-b-contraste-red font-bold': page==='devops'}"
+            class="cursor-pointer text-xl hover:text-contraste-gray hover:border-b hover:border-b-contraste-red hover:font-bold">
+                FATEC
+            </li>-->
+        </ul>
     </header>
+
+    <main class="flex flex-col content-center py-10">
+        <div x-show="page==='home'" class="mx-auto max-w-[1200px]">
+            <div>
+                <h1>Bem vindo á Fatec Jales</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio rem quas quibusdam impedit repudiandae suscipit ullam facere delectus laudantium. Voluptate iure aliquid, soluta voluptates nulla totam esse veritatis doloribus aperiam.</p>
+                <aside>
+                    <img src="" alt="">
+                </aside>
+            </div>
+        </div>
+        <div x-show="page==='contato'" class="mx-auto max-w-[1200px]">
+            
+        </div>
+        <div x-show="page==='devops'" class="mx-auto max-w-[1200px] space-y-10">
+            <div>
+                <h1>Método Escolhido: SPA</h1>
+                <p>O que é uma aplicação SPA?</p>
+                <p>SPA é uma sigla em inglês para Single Page Application, este modelo de aplicação web consiste em ter todos os dados que serão apresentados em uma única página</p>
+            </div>
+            <div class="space-y-10">
+                <h1 class="text-xl text-center">
+                    Principais técnologias utilizadas
+                </h1>
+                <div class="flex flex-row justify-around items-center">
+                    <div class="max-w-[800px]">
+                        <h1 class="text-xl font-bold">HTML 5</h1>
+                        <p class="text-justify text-sm">HTML5 é a quinta versão do HTML e trouxe diversas vantagens para o desenvolvimento web. Com ele, é possível criar páginas mais modernas e interativas, que se adaptam a diferentes dispositivos. Além disso, o HTML5 oferece recursos multimídia nativos, como a reprodução de vídeos e áudios, sem a necessidade de plugins externos. Suas APIs poderosas permitem a criação de aplicações web mais avançadas, como a geolocalização e o armazenamento local de dados. O HTML5 também introduziu uma estrutura semântica mais clara, ajudando os desenvolvedores a criar páginas com significado e melhorando a acessibilidade. Em resumo, o HTML5 torna a experiência na web mais rica, dinâmica e compatível com uma ampla variedade de dispositivos.</p>
+                    </div>
+                    <img src="./src/img/html5.jpg" alt="HTML5" class="w-32 h-[7.5rem] rounded-full">
+                </div>
+                <div class="flex flex-row justify-around items-center">
+                    <img src="./src/img/tailwindcss-ar21.png" alt="Tailwind CSS" class="w-44 h-20 rounded-lg">
+                    <div class="max-w-[800px]">
+                        <h1 class="text-xl font-bold">Tailwind CSS</h1>
+                        <p class="text-justify text-sm">Tailwind CSS é um framework de CSS altamente personalizável e utilitário que permite a criação rápida e eficiente de interfaces de usuário modernas. Com o Tailwind CSS, você pode criar estilos personalizados e responsivos sem escrever CSS tradicional. Em vez disso, você utiliza classes utilitárias para estilizar os elementos HTML. Isso resulta em um código mais limpo e legível, além de facilitar a manutenção e o trabalho em equipe. Outra vantagem do Tailwind CSS é a sua abordagem altamente configurável, que permite personalizar facilmente os estilos, as cores e os tamanhos, garantindo uma aparência única para o seu projeto. Com sua ampla gama de utilitários prontos para uso, o Tailwind CSS acelera o desenvolvimento front-end e oferece flexibilidade para atender às necessidades específicas do seu projeto.</p>
+                        <p class="text-justify text-md">Link: <a class="font-bold" href="https://tailwindcss.com/">https://tailwindcss.com/</a></p>
+                    </div>
+                </div>
+                <div class="flex flex-row justify-around items-center">
+                    <div class="max-w-[800px]">
+                        <h1 class="text-xl font-bold">Alpine JS</h1>
+                        <p class="text-justify text-sm">Alpine.js é um framework JavaScript leve e fácil de usar, projetado para aprimorar a interatividade e a funcionalidade das páginas da web. Com Alpine.js, você pode adicionar comportamentos dinâmicos e manipulação de eventos aos elementos HTML, sem a necessidade de escrever muito código JavaScript. Ele oferece uma sintaxe simples e declarativa, permitindo que você adicione interatividade apenas com atributos HTML. Uma das grandes vantagens do Alpine.js é o seu tamanho reduzido, o que o torna ideal para projetos que requerem uma biblioteca JavaScript leve. Além disso, o Alpine.js é altamente extensível e suporta a integração com outras bibliotecas JavaScript e frameworks, tornando-o uma ótima opção para desenvolvedores que desejam adicionar recursos interativos a seus projetos de forma rápida e eficiente.</p>
+                        <p class="text-justify text-md">Link: <a class="font-bold" href="https://alpinejs.dev/">https://alpinejs.dev/</a></p>
+                    </div>
+                    <img src="./src/img/alpinejs-logo.png" alt="Alpine JS" class="w-32 h-32 rounded-full">
+                </div>
+            </div>
+        </div>
+        <div x-show="page==='aboutme'" class="mx-auto max-w-[1200px]">
+
+        </div>
+    </main>
+    
+    <footer class="py-3 flex flex-col relative bottom-0 w-full"
+    :class="{'bg-background border-t-contraste-gray border-t': theme===1, 'bg-contraste-white border-t-contraste-red border-t': theme===2}">
+        <p class="text-center">&copy; COPYRIGHT FATEC JALES 2023. DESENVOLVIDO POR JOÃO PEDRO MERLOTTI. </p>
+    </footer>
+    <script src="./src/js/index.js"></script>
 </body>
 </html>
