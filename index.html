@@ -57,8 +57,21 @@
     <main class="flex flex-col content-center py-10">
         <div x-show="page==='home'" class="mx-auto max-w-[1200px]">
             <div>
-                <h1>Bem vindo á Fatec Jales</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio rem quas quibusdam impedit repudiandae suscipit ullam facere delectus laudantium. Voluptate iure aliquid, soluta voluptates nulla totam esse veritatis doloribus aperiam.</p>
+                <p class="text-justify">
+                    A Faculdade de Tecnologia do Estado de São Paulo (FATEC) é uma instituição de ensino superior reconhecida por sua excelência na formação de profissionais técnicos e tecnólogos. Com foco nas áreas de tecnologia, a FATEC oferece cursos superiores de qualidade, alinhados às demandas do mercado de trabalho e com uma forte base teórica aliada à prática.<br>
+<br>
+Uma das unidades da FATEC que merece destaque é a unidade de Jales. Localizada na cidade de Jales, interior do estado de São Paulo, a FATEC Jales é uma referência na região quando se trata de ensino técnico e tecnológico.<br>
+<br>
+A FATEC Jales oferece cursos superiores de Tecnologia em Análise e Desenvolvimento de Sistemas e Tecnologia em Agronegócio. Com uma infraestrutura moderna e bem equipada, a unidade proporciona aos estudantes um ambiente propício para o aprendizado, com laboratórios atualizados, salas de aula confortáveis e recursos tecnológicos que auxiliam no processo de ensino-aprendizagem. <br>
+<br>
+O corpo docente da FATEC Jales é formado por professores qualificados, com ampla experiência em suas áreas de atuação. Eles estão sempre buscando atualização e trazendo para a sala de aula os conhecimentos mais recentes e relevantes para cada curso.<br>
+<br>
+Além disso, a FATEC Jales mantém parcerias com empresas e instituições locais, promovendo a integração entre a academia e o mercado de trabalho. Essas parcerias oferecem aos estudantes oportunidades de estágio, projetos de pesquisa e extensão, além de possibilitar a realização de visitas técnicas e a participação em eventos e palestras com profissionais renomados. <br>
+<br>
+A FATEC Jales também valoriza o desenvolvimento de habilidades socioemocionais e a formação integral dos estudantes. Para isso, promove atividades extracurriculares, como projetos de empreendedorismo, eventos científicos, semanas acadêmicas e ações sociais que visam a integração com a comunidade local.<br>
+<br>
+Dessa forma, a FATEC Jales desempenha um papel fundamental no desenvolvimento regional, formando profissionais capacitados, aptos a enfrentar os desafios do mercado de trabalho e contribuir para o progresso da sociedade. A unidade se destaca pela qualidade de ensino, infraestrutura adequada e pelo compromisso em formar profissionais éticos, competentes e comprometidos com o desenvolvimento sustentável e a inovação tecnológica. <br>
+                </p>
                 <aside>
                     <img src="" alt="">
                 </aside>
@@ -102,8 +115,31 @@
                 </div>
             </div>
         </div>
-        <div x-show="page==='aboutme'" class="mx-auto max-w-[1200px]">
+        <div x-show="page==='aboutme'" class="mx-auto max-w-[1200px] space-x-10 flex">
+            <div>
+                <img src="./src/img/Me.jpg" alt="João Pedro Merlotti" class="w-44 h-48 rounded-xl shadow-md" :class="{'shadow-contraste-red/50': theme===0, 'shadow-contraste-gray/30': theme===1}">
+            </div>
+            <div>
+                <h3>João Pedro Merlotti</h3>
+                <p>Nascido em Set/2004</p>
+                <p>Estagiário em Eduzz</p>
+                <p>Desenvolvimento web e nativo, full-stack</p>
+                <p>Mentor em No-Code em B1</p>
+                <h3>Links para contato:</h3>
+                <ul>
+                    <a href="http://wa.me/+5517996522153">
+                        <li class="flex items-center text-md space-x-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i><p>(17) 99652-2153</p>
+                        </li>
+                    </a>
+                    <a href="https://github.com/jpmerlotti">
+                        <li class="flex items-center text-md space-x-2">
+                            <i class="fa-brands fa-github text-lg"></i><p>jpmerlotti</p>
+                        </li>
+                    </a>
+                </ul>
 
+            </div>
         </div>
     </main>
     
