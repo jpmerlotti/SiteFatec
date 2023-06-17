@@ -55,30 +55,45 @@
     </header>
 
     <main class="flex flex-col content-center py-10">
-        <div x-show="page==='home'" class="mx-auto max-w-[1200px]">
-            <div>
-                <p class="text-justify">
+        <div x-show="page==='home'" class="mx-auto max-w-[1400px]">
+            <div class="flex space-x-5 items-center">
+                <p class="max-w-[800px] text-justify">
                     A Faculdade de Tecnologia do Estado de São Paulo (FATEC) é uma instituição de ensino superior reconhecida por sua excelência na formação de profissionais técnicos e tecnólogos. Com foco nas áreas de tecnologia, a FATEC oferece cursos superiores de qualidade, alinhados às demandas do mercado de trabalho e com uma forte base teórica aliada à prática.<br>
-<br>
-Uma das unidades da FATEC que merece destaque é a unidade de Jales. Localizada na cidade de Jales, interior do estado de São Paulo, a FATEC Jales é uma referência na região quando se trata de ensino técnico e tecnológico.<br>
-<br>
-A FATEC Jales oferece cursos superiores de Tecnologia em Análise e Desenvolvimento de Sistemas e Tecnologia em Agronegócio. Com uma infraestrutura moderna e bem equipada, a unidade proporciona aos estudantes um ambiente propício para o aprendizado, com laboratórios atualizados, salas de aula confortáveis e recursos tecnológicos que auxiliam no processo de ensino-aprendizagem. <br>
-<br>
-O corpo docente da FATEC Jales é formado por professores qualificados, com ampla experiência em suas áreas de atuação. Eles estão sempre buscando atualização e trazendo para a sala de aula os conhecimentos mais recentes e relevantes para cada curso.<br>
-<br>
-Além disso, a FATEC Jales mantém parcerias com empresas e instituições locais, promovendo a integração entre a academia e o mercado de trabalho. Essas parcerias oferecem aos estudantes oportunidades de estágio, projetos de pesquisa e extensão, além de possibilitar a realização de visitas técnicas e a participação em eventos e palestras com profissionais renomados. <br>
-<br>
-A FATEC Jales também valoriza o desenvolvimento de habilidades socioemocionais e a formação integral dos estudantes. Para isso, promove atividades extracurriculares, como projetos de empreendedorismo, eventos científicos, semanas acadêmicas e ações sociais que visam a integração com a comunidade local.<br>
-<br>
-Dessa forma, a FATEC Jales desempenha um papel fundamental no desenvolvimento regional, formando profissionais capacitados, aptos a enfrentar os desafios do mercado de trabalho e contribuir para o progresso da sociedade. A unidade se destaca pela qualidade de ensino, infraestrutura adequada e pelo compromisso em formar profissionais éticos, competentes e comprometidos com o desenvolvimento sustentável e a inovação tecnológica. <br>
+                    <br>
+                    Uma das unidades da FATEC que merece destaque é a unidade de Jales. Localizada na cidade de Jales, interior do estado de São Paulo, a FATEC Jales é uma referência na região quando se trata de ensino técnico e tecnológico.<br>
+                    <br>
+                    A FATEC Jales oferece cursos superiores de Tecnologia em Análise e Desenvolvimento de Sistemas e Tecnologia em Agronegócio. Com uma infraestrutura moderna e bem equipada, a unidade proporciona aos estudantes um ambiente propício para o aprendizado, com laboratórios atualizados, salas de aula confortáveis e recursos tecnológicos que auxiliam no processo de ensino-aprendizagem. <br>
+                    <br>
+                    O corpo docente da FATEC Jales é formado por professores qualificados, com ampla experiência em suas áreas de atuação. Eles estão sempre buscando atualização e trazendo para a sala de aula os conhecimentos mais recentes e relevantes para cada curso.<br>
+                    <br>
+                    Além disso, a FATEC Jales mantém parcerias com empresas e instituições locais, promovendo a integração entre a academia e o mercado de trabalho. Essas parcerias oferecem aos estudantes oportunidades de estágio, projetos de pesquisa e extensão, além de possibilitar a realização de visitas técnicas e a participação em eventos e palestras com profissionais renomados. <br>
+                    <br>
+                    A FATEC Jales também valoriza o desenvolvimento de habilidades socioemocionais e a formação integral dos estudantes. Para isso, promove atividades extracurriculares, como projetos de empreendedorismo, eventos científicos, semanas acadêmicas e ações sociais que visam a integração com a comunidade local.<br>
+                    <br>
+                    Dessa forma, a FATEC Jales desempenha um papel fundamental no desenvolvimento regional, formando profissionais capacitados, aptos a enfrentar os desafios do mercado de trabalho e contribuir para o progresso da sociedade. A unidade se destaca pela qualidade de ensino, infraestrutura adequada e pelo compromisso em formar profissionais éticos, competentes e comprometidos com o desenvolvimento sustentável e a inovação tecnológica. <br>
                 </p>
-                <aside>
-                    <img src="" alt="">
-                </aside>
+                <div class="flex flex-col bg-gray-200 max-w-[600px] justify-center space-y-2 p-2 h-full">
+                    <div class="flex flex-row flex-1 space-x-2">
+                        <img src="./src/img/foto_pátio.jpg" alt="Pátio refeitório da FATEC Jales" class="w-[50%] h-32">
+                        <img src="./src/img/foto_arquibancada.jpg" alt="Arquibancada circular da FATEC Jales" class="w-[50%] h-32">
+                    </div>
+                    <img src="./src/img/foto_frente.jpg" alt="Frente da FATEC Jales" class="w-[100%] h-56">
+                </div>
             </div>
         </div>
-        <div x-show="page==='contato'" class="mx-auto max-w-[1200px]">
-            
+        <div x-show="page==='contato'" class="mx-auto max-w-[1200px] space-y-10">
+            <div class="flex items-center hover:text-contraste-red p-3 space-x-2" :class="{ 'bg-gray-900': theme===1, 'bg-gray-200': theme===2}">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d880.1043039461775!2d-50.54099242475939!3d-20.276019855806968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x949828ccfaa94d1d%3A0x8b69addbada7ff85!2sFaculdade%20de%20Tecnologia%20Prof.%20Jos%C3%A9%20Camargo%20-%20Fatec%20Jales!5e0!3m2!1spt-PT!2sbr!4v1686569910947!5m2!1spt-PT!2sbr" width="300" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <p>Rua Vicente Leporace, 2630, Jd. Trianon <br> CEP 15703-116, Jales/SP - Brasil</p>
+            </div>
+            <div class="flex flex-col p-3 space-x-2" :class="{ 'bg-gray-900': theme===1, 'bg-gray-200': theme===2}">
+                <ul class="">
+                    <li  class="hover:text-contraste-red"><a href="https://wa.me/+5517996762867" target="_blank" class="flex items-center space-x-1"><i class="fa-brands fa-whatsapp text-xl"></i><p>(17) 99676-2867</p></a></li>
+                    <li  class="flex items-center space-x-1"><i class="fa-solid fa-phone text-lg" class="flex items-center"></i><p>(17) 3621-6911</p></li>
+                    <li  class="flex items-center space-x-1"><i class="fa-solid fa-fax text-lg" class="flex items-center"></i><p>(17) 3632-2239</p></li>
+                    <li  class="hover:text-contraste-red"><a target="_blank" href="mailto:fatecjales@fatecjales.edu.br" class="flex items-center space-x-1"><i class="fa-sharp fa-regular fa-envelope text-lg"></i><p>fatecjales@fatecjales.edu.br</p></a></li>
+                </ul>
+            </div>
         </div>
         <div x-show="page==='devops'" class="mx-auto max-w-[1200px] space-y-10">
             <div>
@@ -127,12 +142,12 @@ Dessa forma, a FATEC Jales desempenha um papel fundamental no desenvolvimento re
                 <p>Mentor em No-Code em B1</p>
                 <h3>Links para contato:</h3>
                 <ul>
-                    <a href="http://wa.me/+5517996522153">
+                    <a href="http://wa.me/+5517996522153" target="__blank">
                         <li class="flex items-center text-md space-x-2">
                             <i class="fa-brands fa-whatsapp text-lg"></i><p>(17) 99652-2153</p>
                         </li>
                     </a>
-                    <a href="https://github.com/jpmerlotti">
+                    <a href="https://github.com/jpmerlotti" target="_blank">
                         <li class="flex items-center text-md space-x-2">
                             <i class="fa-brands fa-github text-lg"></i><p>jpmerlotti</p>
                         </li>
