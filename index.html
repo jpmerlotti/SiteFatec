@@ -55,7 +55,7 @@
     </header>
 
     <main class="flex flex-col content-center py-10">
-        <div x-show="page==='home'" class="mx-auto max-w-[1400px]">
+        <div x-show="page==='home'" class="mx-auto max-w-[1400px] space-y-10">
             <div class="flex space-x-5 items-center">
                 <p class="max-w-[800px] text-justify">
                     A Faculdade de Tecnologia do Estado de São Paulo (FATEC) é uma instituição de ensino superior reconhecida por sua excelência na formação de profissionais técnicos e tecnólogos. Com foco nas áreas de tecnologia, a FATEC oferece cursos superiores de qualidade, alinhados às demandas do mercado de trabalho e com uma forte base teórica aliada à prática.<br>
@@ -72,7 +72,7 @@
                     <br>
                     Dessa forma, a FATEC Jales desempenha um papel fundamental no desenvolvimento regional, formando profissionais capacitados, aptos a enfrentar os desafios do mercado de trabalho e contribuir para o progresso da sociedade. A unidade se destaca pela qualidade de ensino, infraestrutura adequada e pelo compromisso em formar profissionais éticos, competentes e comprometidos com o desenvolvimento sustentável e a inovação tecnológica. <br>
                 </p>
-                <div class="flex flex-col bg-gray-200 max-w-[600px] justify-center space-y-2 p-2 h-full">
+                <div class="flex flex-col max-w-[600px] justify-center space-y-2 p-2 h-full" :class="{ 'bg-gray-200': theme===2, 'bg-gray-950': theme===1}">
                     <div class="flex flex-row flex-1 space-x-2">
                         <img src="./src/img/foto_pátio.jpg" alt="Pátio refeitório da FATEC Jales" class="w-[50%] h-32">
                         <img src="./src/img/foto_arquibancada.jpg" alt="Arquibancada circular da FATEC Jales" class="w-[50%] h-32">
@@ -80,13 +80,65 @@
                     <img src="./src/img/foto_frente.jpg" alt="Frente da FATEC Jales" class="w-[100%] h-56">
                 </div>
             </div>
+            <div :class="{'border-b border-b-contraste-gray mt-3 mb-2': theme===1, 'border-b border-b-contraste-red mt-3 mb-2': theme===2}"></div>
+            <div class="flex items-center justify-between">
+                <div class="flex flex-col justify-center max-w-[500px] space-y-10">
+                    <p class="font-bold text-lg text-center">CONHEÇA A FATEC JALES</p>
+                    <p class="max-w-[300px]">O Diretor, professor Dr. Evanivaldo Castro Silva Júnior, ou professor "Júnior",  apresenta toda a infraestrutura da Fatec Professor José Camargo... acompanhe...</p>   
+                    <a class="px-3 py-2 text-center" :class="{ 'bg-contraste-gray border border-contraste-gray font-bold rounded-lg hover:bg-contraste-red': theme===2, 
+                        'bg-contraste-red border border-contraste-red font-bold rounded-lg hover:bg-contraste-gray ': theme===1 }" 
+                        href="https://www.youtube.com/playlist?list=PL04cZ5hzTlFRb399zeKqKuoT1i68RIHvQ">Saiba Mais</a>
+                    <div>
+                        <h4 class="font-bold">CURSOS</h4>
+                        <ul>
+                            <li class="hover:text-contraste-red">
+                                <a href="https://www.fatecjales.edu.br/agronegocio">
+                                    Agronegócio
+                                </a>
+                            </li>
+                            <li class="hover:text-contraste-red">
+                                <a href="https://www.fatecjales.edu.br/#">
+                                    Análise e Desenvolvimento de Sistemas
+                                </a>
+                            </li>
+                            <li class="hover:text-contraste-red">
+                                <a href="https://www.fatecjales.edu.br/gestao-empresarial">
+                                    Gestão Empresarial
+                                </a>
+                            </li>
+                            <li class="hover:text-contraste-red">
+                                <a href="https://www.fatecjales.edu.br/sistemas-para-internet">
+                                    Sistemas para Internet
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <iframe width="730" height="411" src="https://www.youtube.com/embed/al4QCiLPfSQ" title="Vídeo 1: Apresentação da Fatec Jales" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div :class="{'border-b border-b-contraste-gray mt-3 mb-2': theme===1, 'border-b border-b-contraste-red mt-3 mb-2': theme===2}"></div>
+            <div class="flex space-x-3 items-center justify-end">
+                <h4 class="font-bold">Nossas redes sociais:</h4>
+                <a href="https://twitter.com/fatecjales" class="hover:text-contraste-red">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a href="https://www.facebook.com/fatecjales" class="hover:text-contraste-red">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://www.youtube.com/tvfatecjales" class="hover:text-contraste-red">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/fatecjales/" class="hover:text-contraste-red">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+            </div>
         </div>
-        <div x-show="page==='contato'" class="mx-auto max-w-[1200px] space-y-10">
-            <div class="flex items-center hover:text-contraste-red p-3 space-x-2" :class="{ 'bg-gray-900': theme===1, 'bg-gray-200': theme===2}">
+        <div x-show="page==='contato'" class="mx-auto max-w-[1400px] flex flex-row items-center space-x-20">
+            <div class="flex items-center hover:text-contraste-red px-3 py-4 space-x-2" :class="{ 'bg-gray-950': theme===1, 'bg-gray-200': theme===2}">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d880.1043039461775!2d-50.54099242475939!3d-20.276019855806968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x949828ccfaa94d1d%3A0x8b69addbada7ff85!2sFaculdade%20de%20Tecnologia%20Prof.%20Jos%C3%A9%20Camargo%20-%20Fatec%20Jales!5e0!3m2!1spt-PT!2sbr!4v1686569910947!5m2!1spt-PT!2sbr" width="300" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 <p>Rua Vicente Leporace, 2630, Jd. Trianon <br> CEP 15703-116, Jales/SP - Brasil</p>
             </div>
-            <div class="flex flex-col p-3 space-x-2" :class="{ 'bg-gray-900': theme===1, 'bg-gray-200': theme===2}">
+            <div class="flex flex-col px-3 py-9 space-x-2" :class="{ 'bg-gray-950': theme===1, 'bg-gray-200': theme===2}">
                 <ul class="">
                     <li  class="hover:text-contraste-red"><a href="https://wa.me/+5517996762867" target="_blank" class="flex items-center space-x-1"><i class="fa-brands fa-whatsapp text-xl"></i><p>(17) 99676-2867</p></a></li>
                     <li  class="flex items-center space-x-1"><i class="fa-solid fa-phone text-lg" class="flex items-center"></i><p>(17) 3621-6911</p></li>
@@ -95,14 +147,14 @@
                 </ul>
             </div>
         </div>
-        <div x-show="page==='devops'" class="mx-auto max-w-[1200px] space-y-10">
+        <div x-show="page==='devops'" class="mx-auto max-w-[1200px] space-y-10 flex flex-col">
             <div>
-                <h1>Método Escolhido: SPA</h1>
+                <h4 class="font-bold">Método Escolhido: SPA</h1>
                 <p>O que é uma aplicação SPA?</p>
                 <p>SPA é uma sigla em inglês para Single Page Application, este modelo de aplicação web consiste em ter todos os dados que serão apresentados em uma única página</p>
             </div>
             <div class="space-y-10">
-                <h1 class="text-xl text-center">
+                <h1 class="text-xl text-center font-bold">
                     Principais técnologias utilizadas
                 </h1>
                 <div class="flex flex-row justify-around items-center">
@@ -130,30 +182,32 @@
                 </div>
             </div>
         </div>
-        <div x-show="page==='aboutme'" class="mx-auto max-w-[1200px] space-x-10 flex">
-            <div>
-                <img src="./src/img/Me.jpg" alt="João Pedro Merlotti" class="w-44 h-48 rounded-xl shadow-md" :class="{'shadow-contraste-red/50': theme===0, 'shadow-contraste-gray/30': theme===1}">
-            </div>
-            <div>
-                <h3>João Pedro Merlotti</h3>
-                <p>Nascido em Set/2004</p>
-                <p>Estagiário em Eduzz</p>
-                <p>Desenvolvimento web e nativo, full-stack</p>
-                <p>Mentor em No-Code em B1</p>
-                <h3>Links para contato:</h3>
-                <ul>
-                    <a href="http://wa.me/+5517996522153" target="__blank">
-                        <li class="flex items-center text-md space-x-2">
-                            <i class="fa-brands fa-whatsapp text-lg"></i><p>(17) 99652-2153</p>
-                        </li>
-                    </a>
-                    <a href="https://github.com/jpmerlotti" target="_blank">
-                        <li class="flex items-center text-md space-x-2">
-                            <i class="fa-brands fa-github text-lg"></i><p>jpmerlotti</p>
-                        </li>
-                    </a>
-                </ul>
-
+        <div x-show="page==='aboutme'" class="mx-auto max-w-[1200px]">
+            <div class="flex space-x-10 py-2 px-3" :class="{ 'bg-gray-200 rounded-xl': theme===2, 'bg-gray-950 rounded-xl': theme===1}">
+                <div>
+                    <img src="./src/img/Me.jpg" alt="João Pedro Merlotti" class="w-44 h-48 rounded-xl shadow-md" :class="{'shadow-contraste-red/50': theme===0, 'shadow-contraste-gray/30': theme===1}">
+                </div>
+                <div>
+                    <h3>João Pedro Merlotti</h3>
+                    <p>Nascido em Set/2004</p>
+                    <p>Estagiário em Eduzz</p>
+                    <p>Desenvolvimento web e nativo, full-stack</p>
+                    <p>Mentor em No-Code em B1</p>
+                    <h3>Links para contato:</h3>
+                    <ul>
+                        <a href="http://wa.me/+5517996522153" target="__blank">
+                            <li class="flex items-center text-md space-x-2 hover:text-contraste-red">
+                                <i class="fa-brands fa-whatsapp text-lg"></i><p>(17) 99652-2153</p>
+                            </li>
+                        </a>
+                        <a href="https://github.com/jpmerlotti" target="_blank">
+                            <li class="flex items-center text-md space-x-2 hover:text-contraste-red">
+                                <i class="fa-brands fa-github text-lg"></i><p>jpmerlotti</p>
+                            </li>
+                        </a>
+                    </ul>
+                    
+                </div>
             </div>
         </div>
     </main>
